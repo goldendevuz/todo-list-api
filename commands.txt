@@ -1,0 +1,19 @@
+python3 -m venv env
+. env/bin/activate
+source env/bin/activate
+
+make init-env
+make act-env
+make i
+make mig
+make cru
+make start
+make rm-idea
+make collect
+make rm-static
+make clear
+make no-db
+make re-django
+make re-migrate
+make backup
+make clear-backups

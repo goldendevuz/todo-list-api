@@ -61,7 +61,7 @@ Make sure you have the following installed:
 
 ## Folder Structure
 
-- `config/` - Configuration files for the project.
+- `core/` - coreuration files for the project.
 - `manage.py` - Entry point for Django CLI commands.
 - `requirements.txt` - Python dependencies for the project.
 - `Makefile` - Optional automation commands for setup and development.
@@ -77,3 +77,7 @@ This boilerplate is ideal for:
 ## Contributing
 
 Contributions are welcome! If you find issues or have ideas to improve this boilerplate, feel free to open an issue or submit a pull request.
+
+## Materials
+[How to Generate App Password in Gmail/Google Workspace?
+](https://youtu.be/lSURGX0JHbA)

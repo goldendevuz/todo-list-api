@@ -1,1 +1,11 @@
 Django
+djangorestframework
+django-extensions
+drf-spectacular
+drf-spectacular-sidecar
+django-jazzmin
+python-decouple
+djangorestframework-simplejwt
+icecream
+django-filter
+pillow
