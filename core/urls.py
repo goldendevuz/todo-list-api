@@ -20,7 +20,6 @@ spectacular_urls = [
 ]
 
 api_urls = [
-    path('user/', include('apps.users.urls')),
     path('todos/', include('apps.todo.urls')),
     path('test-login', test, name='test'),
 ]

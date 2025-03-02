@@ -3,8 +3,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
-# from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.validators import ValidationError
+
+from apps.todo.pagination import CustomPagination
 
 from .models import Todo
 from .permissions import IsOwner
@@ -14,18 +15,20 @@ class TodoViewSet(ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
     permission_classes = [IsAuthenticated, IsOwner]
+    search_fields = ['title', 'description']
+    pagination_class = CustomPagination
 
 
     def get_queryset(self):
-        return super().get_queryset().filter(author=self.request.user)
+        return super().get_queryset().filter(owner=self.request.user)
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         try:
-            # Pass the author to the save method
-            serializer.save(author=request.user)
+            # Pass the owner to the save method
+            serializer.save(owner=request.user)
         except IntegrityError:
             raise ValidationError({"detail": "Todo with this title already exists for the current user."})
 

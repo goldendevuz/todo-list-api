@@ -6,4 +6,4 @@ class IsOwner(permissions.BasePermission):
             # Allow read-only methods for everyone
             return True
         # Check if the user making the request is the owner of the student object
-        return obj.user == request.user
+        return obj.owner == request.user

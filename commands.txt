@@ -17,3 +17,5 @@ make re-django
 make re-migrate
 make backup
 make clear-backups
+
+pip uninstall -y
