@@ -8,3 +8,6 @@ python-decouple
 icecream
 django-filter
 pillow
+dj-rest-auth
+django-allauth
+requests

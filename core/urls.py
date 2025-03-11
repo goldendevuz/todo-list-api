@@ -22,6 +22,9 @@ spectacular_urls = [
 api_urls = [
     path('todos/', include('apps.todo.urls')),
     path('test-login', test, name='test'),
+    path('api-auth/', include('rest_framework.urls')),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
 ]
 
 urlpatterns += api_urls
